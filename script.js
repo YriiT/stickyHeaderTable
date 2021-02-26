@@ -3,7 +3,7 @@ var rows = [];
 
 function createRow(items) {
     var row = {};
-    items.forEach(element => {
+    items.forEach(function (element) {
         row[element] = 'some data'
     });
     return row;
@@ -22,7 +22,7 @@ function createTable(headers) {
 
     var table = document.querySelector('.table-wrapper table');
 
-    headers.forEach(text => {
+    headers.forEach(function (text) {
         var th = document.createElement('th');
         var div = document.createElement('div');
         div.innerText = text;
@@ -35,7 +35,7 @@ function createTable(headers) {
     rows.forEach(function (row) {
         var bodyRow = document.createElement('tr');
 
-        headers.forEach(key => {
+        headers.forEach(function (key) {
             var td = document.createElement('td');
             td.innerText = row[key];
             bodyRow.append(td)
