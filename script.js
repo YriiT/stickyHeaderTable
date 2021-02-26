@@ -1,30 +1,30 @@
-let headers = ['col-11', 'col-12', 'col-13', 'col-4', 'col-5', 'col-6', 'col-7', 'col-8', 'col-9', 'col-110', 'col-11', 'col-12', 'col-13', 'col-14', 'col-15', 'col-16', 'col-17', 'col-18', 'col-19'];
-let rows = [];
+var headers = ['col-11', 'col-12', 'col-13', 'col-4', 'col-5', 'col-6', 'col-7', 'col-8', 'col-9', 'col-110', 'col-11', 'col-12', 'col-13', 'col-14', 'col-15', 'col-16', 'col-17', 'col-18', 'col-19'];
+var rows = [];
 
 function createRow(items) {
-    let row = {};
+    var row = {};
     items.forEach(element => {
         row[element] = 'some data'
     });
     return row;
 }
 
-for (let i = 0; i <= 100; i++) {
+for (var i = 0; i <= 100; i++) {
     rows[i] = createRow(headers);
 }
 
 function createTable(headers) {
-    const headerRow = document.createElement('tr');
+    var headerRow = document.createElement('tr');
 
-    const thead = document.createElement('thead');
-    const tbody = document.createElement('tbody');
+    var thead = document.createElement('thead');
+    var tbody = document.createElement('tbody');
 
 
-    const table = document.querySelector('.table-wrapper table');
+    var table = document.querySelector('.table-wrapper table');
 
     headers.forEach(text => {
-        let th = document.createElement('th');
-        let div = document.createElement('div');
+        var th = document.createElement('th');
+        var div = document.createElement('div');
         div.innerText = text;
         th.append(div);
         headerRow.append(th);
@@ -32,11 +32,11 @@ function createTable(headers) {
 
     thead.append(headerRow);
 
-    rows.forEach(row => {
-        const bodyRow = document.createElement('tr');
+    rows.forEach(function (row) {
+        var bodyRow = document.createElement('tr');
 
         headers.forEach(key => {
-            let td = document.createElement('td');
+            var td = document.createElement('td');
             td.innerText = row[key];
             bodyRow.append(td)
         });
@@ -49,10 +49,10 @@ function createTable(headers) {
 
 createTable(headers);
 
-// const tableWrapper = document.querySelector('div.table-wrapper');
+// var tableWrapper = document.querySelector('div.table-wrapper');
 
 // function disableHover(event) {
-//     const table = event.target;
+//     var table = event.target;
 //     clearTimeout(this.timer);
 //     if (!table.classList.contains('disableHover')) {
 //         table.classList.add('disableHover');
